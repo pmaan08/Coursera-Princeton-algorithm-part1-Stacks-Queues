@@ -6,13 +6,13 @@ public class Deque<Item> implements Iterable<Item>
 {
  private Node first;
  private Node last;
-   private int size;
+   private int size1;
   
   public Deque()
 {
 first=null;
 last=null;
-size=0;
+size1=0;
 }
 private class Node
 {
@@ -34,12 +34,12 @@ private class Node
 // is the deque empty?
  public boolean isEmpty()
 {
-  return size==0;
+  return size1==0;
 }
 // return the number of items on the deque
-public int size1()
+public int size()
 {
- return size;
+ return size1;
 }
 
 
@@ -56,11 +56,11 @@ ptr=first.next;
 first=new Node();
 first.item=item;
 first.next=ptr;
-if(size==0)
+if(size1==0)
 {
 	last=first;
 }
-size++;
+size1++;
 }
 	 
 
@@ -76,7 +76,7 @@ throw new java.lang.NullPointerException();
 Node ptr=last;
 last =new Node(item);
 ptr.next=last;
-size++;
+size1++;
  }
 
 
@@ -91,7 +91,7 @@ Item item=first.item;
 Node ptr=first;
 first=first.next;
 ptr.next=null;
-size--;
+size1--;
 return item;
 }
 
@@ -108,7 +108,7 @@ while(ptr.next.next!=null)
 {ptr=ptr.next;
 }
 ptr.next=null;
-size--;
+size1--;
 return item;
 }
 
@@ -166,10 +166,10 @@ return item;
         for (Integer i : deque)
                 System.out.println(i);
         System.out.println("-----");
-        System.out.println(deque.size);
+        System.out.println(deque.size1);
         deque.removeFirst();
         deque.removeLast();
-        System.out.println(deque.size);
+        System.out.println(deque.size1);
     }
 }
 
